@@ -7,7 +7,7 @@ $mail->CharSet = 'utf-8';
 $name = $_POST['user_name'];
 $message = $_POST['user_message'];
 $email = $_POST['user_email'];
-$fname = $_POST['user_fname']
+$name += $_POST['user_fname']
 //$mail->SMTPDebug = 3;                               // Enable verbose debug output
 
 $mail->isSMTP();                                      // Set mailer to use SMTP
@@ -29,7 +29,7 @@ $mail->addAddress('dimen200210@gmail.com');     // Кому будет уход�
 $mail->isHTML(true);                                  // Set email format to HTML
 
 $mail->Subject = 'Заявка с сайта';
-$mail->Body    = '' .$name.$fname ' оставил заявку<br> ' .$message. '<br>Почта этого пользователя: ' .$email;
+$mail->Body    = '' .$name. ' оставил заявку<br> ' .$message. '<br>Почта этого пользователя: ' .$email;
 $mail->AltBody = '';
 
 if(!$mail->send()) {
